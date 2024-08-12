@@ -1,5 +1,6 @@
-import 'dart:ui';
+// ignore_for_file: unnecessary_import
 
+import 'dart:ui';
 import 'package:campus_mobile_experimental/app_styles.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';

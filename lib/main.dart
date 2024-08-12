@@ -1,9 +1,9 @@
-import 'dart:async';
+// ignore_for_file: unused_local_variable
 
+import 'dart:async';
 import 'package:campus_mobile_experimental/app_constants.dart';
 import 'package:campus_mobile_experimental/app_provider.dart';
-import 'package:campus_mobile_experimental/app_router.dart'
-    as campusMobileRouter;
+import 'package:campus_mobile_experimental/app_router.dart' as campusMobileRouter;
 import 'package:campus_mobile_experimental/app_styles.dart';
 import 'package:campus_mobile_experimental/core/models/authentication.dart';
 import 'package:campus_mobile_experimental/core/models/user_profile.dart';
@@ -19,7 +19,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
 import 'package:just_audio_background/just_audio_background.dart';
-
 late bool showOnboardingScreen;
 
 bool isFirstRunFlag = false;
@@ -91,22 +90,24 @@ class CampusMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = ThemeData(
-      primarySwatch: ColorPrimary,
       primaryColor: lightPrimaryColor,
-      brightness: Brightness.light,
-      // buttonColor: lightButtonColor,
-      backgroundColor: lightButtonColor, // added
+      brightness: Brightness.light, // added
       textTheme: lightThemeText,
       iconTheme: lightIconTheme,
-      appBarTheme: lightAppBarTheme,
+      appBarTheme: lightAppBarTheme, colorScheme: ColorScheme.fromSwatch(primarySwatch: ColorPrimary).copyWith(background: lightButtonColor),
     );
 
     final ThemeData darkTheme = ThemeData(
       primarySwatch: ColorPrimary,
       primaryColor: darkPrimaryColor,
       brightness: Brightness.dark,
-      // buttonColor: darkButtonColor,
-      backgroundColor: darkButtonColor, // added
+      colorScheme: ColorScheme.fromSwatch(
+        primarySwatch: ColorPrimary,
+        brightness: Brightness.dark,
+      ).copyWith(
+        background: darkButtonColor,
+        // Other color settings if needed
+      ),
       textTheme: darkThemeText,
       iconTheme: darkIconTheme,
       appBarTheme: darkAppBarTheme,
